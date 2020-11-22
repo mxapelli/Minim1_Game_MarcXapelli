@@ -34,16 +34,16 @@ public class GameManagerImplTest {
        //Initializing Object List
         listGameObjects =  new LinkedList<>();
         //Initialzing Test User
-        user = new User("xyz", "Krunal", "Badsiwal");
+        user = new User("xyz", "James", "Horner");
         //Appending data to Object List
         listGameObjects.add(new GameObject("001", "Sword"));
         listGameObjects.add(new GameObject("002", "Shield"));
-        listGameObjects.add(new GameObject("003", "Potion"));
+        listGameObjects.add(new GameObject("003", "Gold Coin"));
         //Adding Objects list to Game Manager
         manager.addGameObjects(listGameObjects);
     }
     //Tests
-    //Metodo Test para añadir un usuario en ek sistema y verificar el número de usuarios
+    //Añadir un usuario en el sistema y verificar el número de usuarios
     @Test
     public void addUserTest(){
         //Initial Test, initial users in game Zero!
@@ -52,7 +52,7 @@ public class GameManagerImplTest {
         manager.addUser(user.getId(),user.getName(),user.getSurname());
         Assert.assertEquals(1, manager.numUsers());
         //Adding a second user to the GameManager
-        manager.addUser("abc","Toni","Oller");
+        manager.addUser("abc","Jay","Loop");
         Assert.assertEquals(2, manager.numUsers());
     }
 

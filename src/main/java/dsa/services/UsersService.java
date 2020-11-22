@@ -28,20 +28,23 @@ public class UsersService {
         this.manager = GameManagerImpl.getInstance();
         if (this.manager.numUsers() == 0) {
             //Adding Users
-            this.manager.addUser("001","Midoriya","Izuku");
-            this.manager.addUser("002","Bakugo","Katsuki");
-            this.manager.addUser("003","Uraraka","Ochaco");
+            this.manager.addUser("001","Marc","Xapelli");
+            this.manager.addUser("002","Jay","Loop");
+            this.manager.addUser("003","Hans","Zimmer");
+            this.manager.addUser("004","Ramin","Djawadi");
             //Adding GameObjects
             this.manager.addGameObject(new GameObject("01","Sword"));
             this.manager.addGameObject(new GameObject("02","Shield"));
-            this.manager.addGameObject(new GameObject("03","Potion"));
+            this.manager.addGameObject(new GameObject("03","Gold Coin"));
             //Adding objects to users
-            //Sword & Shield to Midoriya
+            //Sword & Shield & coin for Marc
             this.manager.addUserGameObject("001","01");
             this.manager.addUserGameObject("001","02");
-            //Only shield for Bakugo
+            this.manager.addUserGameObject("001","03");
+            //Sword and Shield for Jay
+            this.manager.addUserGameObject("002","01");
             this.manager.addUserGameObject("002","02");
-            //Only Potion for uraraka
+            //Only Coin for Hans
             this.manager.addUserGameObject("003","03");
         }
     }
