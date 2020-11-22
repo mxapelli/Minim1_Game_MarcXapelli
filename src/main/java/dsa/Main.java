@@ -14,9 +14,7 @@ import java.net.URI;
 // REST AND SWAGGER
 
 public class Main {
-    static final Logger logger = Logger.getLogger(Main.class);
-    public static final String BASE_URI = "http://localhost:8080/minim1/";
-
+    public static final String BASE_URI = "http://localhost:8080/minim1DSA/";
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
      * @return Grizzly HTTP server.
@@ -32,9 +30,9 @@ public class Main {
         BeanConfig beanConfig = new BeanConfig();
 
         beanConfig.setHost("localhost:8080");
-        beanConfig.setBasePath("/minim1");
+        beanConfig.setBasePath("/minim1DSA");
         beanConfig.setContact("marc.xapelli@estudiantat.upc.edu");
-        beanConfig.setDescription("REST API for Game Manager");
+        beanConfig.setDescription("REST API for Game Manager by Marc Xapelli");
         beanConfig.setLicenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html");
         beanConfig.setResourcePackage("dsa.services");
         beanConfig.setTermsOfServiceUrl("http://www.example.com/resources/eula");
@@ -53,25 +51,17 @@ public class Main {
      * @throws IOException -Throws IOException
      */
     public static void main(String[] args) throws IOException {
-        //Log4j initialization with proper configuration
-        //PropertiesConfigurator is used to configure logger from properties file
         //Configuring Log4j, location of the log4j.properties file and must always be inside the src folder
         PropertyConfigurator.configure("src/main/resources/log4j.properties");
-        logger.debug("Debug Test Message!");
-        logger.info("Info Test Message!");
-        logger.warn("Warning Test Message!");
-        logger.error("Error Test Message!");
         // Server Initialization Code
         final HttpServer server = startServer();
         StaticHttpHandler staticHttpHandler = new StaticHttpHandler("./public/");
         server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/");
 
-        // System.out.println(String.format("Jersey app started with WADL available at "
-        //   + "%s application.wadl\nHit enter to stop it...", BASE_URI));
         //Formatting BASE_URI FOR SWAGGER
         System.out.println(String.format("RestApi Started at " + "%s", BASE_URI));
         String swagger_uri = BASE_URI;
-        String target = "minim1";
+        String target = "minim1DSA";
         String replacement = "swagger";
         swagger_uri = swagger_uri.replace(target, replacement);
         System.out.println(String.format("Swagger link: " + "%s\nHit enter to stop it...", swagger_uri));

@@ -46,6 +46,7 @@ public class UsersService {
             this.manager.addUserGameObject("002","02");
             //Only Coin for Hans
             this.manager.addUserGameObject("003","03");
+            //No object for Ramin
         }
     }
     //When multiple GET, PUT, POSTS & DELETE EXIST on the same SERVICE, path must be aggregated
