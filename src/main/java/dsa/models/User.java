@@ -4,23 +4,21 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class User {
-    //Basic User Values
+
     private String id;
     private String name;
     private String surname;
-    //Game User Objects
-    private List<GameObject> listGameObjects = null; //List of Objects
-    //Public Constructor to initialize User
+    //List of Objects
+    private List<GameObject> listGameObjects = null;
+    //User Constructor
     public User(String id, String name, String surname){
         this.name = name;
         this.id = id;
         this.surname = surname;
         this.listGameObjects = new LinkedList<>();
     }
-    public User(){
-        //Empty Constructor Initialization for second cases
-        //Objects list of User is always initialized empty
-    }
+    //Empty Constructor
+    public User(){ }
 
     public int getNumGameObjects(){
         return this.listGameObjects.size();
@@ -35,7 +33,7 @@ public class User {
             return null;
         }
     }
-    //Adds Object to the User list
+    //Adds object to the User list
     public int setGameObject(GameObject gameObject){
         try{
             this.listGameObjects.add(gameObject);
@@ -70,6 +68,7 @@ public class User {
         }
         return 201;//201 Created
     }
+    //Getters and Setters
     public String getId() {
         return id;
     }
@@ -93,8 +92,9 @@ public class User {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-    //Returns in string format the user
+
     @Override
+    //Returns user in string format
     public String toString(){
         return "ID: " + this.getId() + " | Name: " + this.getName() + " | Surname: " + this.getSurname() ;
     }

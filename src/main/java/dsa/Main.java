@@ -14,6 +14,7 @@ import java.net.URI;
 // REST AND SWAGGER
 
 public class Main {
+    static final Logger logger = Logger.getLogger(Main.class);
     public static final String BASE_URI = "http://localhost:8080/minim1DSA/";
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
@@ -53,6 +54,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         //Configuring Log4j, location of the log4j.properties file and must always be inside the src folder
         PropertyConfigurator.configure("src/main/resources/log4j.properties");
+        logger.debug("Debug Test Message!");
         // Server Initialization Code
         final HttpServer server = startServer();
         StaticHttpHandler staticHttpHandler = new StaticHttpHandler("./public/");

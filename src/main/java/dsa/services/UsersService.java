@@ -49,7 +49,6 @@ public class UsersService {
             //No object for Ramin
         }
     }
-    //When multiple GET, PUT, POSTS & DELETE EXIST on the same SERVICE, path must be aggregated
     //Lista de usuarios
     @GET
     @ApiOperation(value = "Get all Users", notes = "Retrieves the list of Users")

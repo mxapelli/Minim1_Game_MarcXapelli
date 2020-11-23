@@ -21,7 +21,6 @@ public interface GameManager {
     int addUserGameObjects(String id, List<GameObject> listGameObjects);
     //Consultar el número de objetos de un usuario
     int getNumGameObjectsUser(String id);
-    /*                  Extras                            */
     //Añadir un Objeto
     int addGameObject(GameObject gameObject);
     //Añadir una lista de Objetos
